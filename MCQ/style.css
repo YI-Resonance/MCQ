@@ -1,0 +1,28 @@
+.optionBtn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  width: 180px;
+}
+
+.optionImg {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 8px;
+}
+
+.correct {
+  border-color: #4CAF50;
+  background-color: #d4f8d4;
+}
+
+.wrong {
+  border-color: #f44336;
+  background-color: #f8d4d4;
+}
