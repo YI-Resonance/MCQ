@@ -1,34 +1,47 @@
+/* 題目置中、加大字體 */
 #questionBox {
   display: flex;
-  justify-content: center;   /* 水平置中 */
-  align-items: center;        /* 垂直置中 */
-  height: 100px;               /* 自行調整高度 */
+  justify-content: center;
+  align-items: center;
+  height: 120px;
   text-align: center;
   font-size: 82px;
   font-weight: bold;
   margin: 20px 0;
 }
+
+/* 選項容器：置中 + 自動換行 + 留空間 */
+#optionsBox {
+  display: flex;
+  justify-content: center;   /* 水平置中 */
+  align-items: center;        /* 垂直置中 */
+  flex-wrap: wrap;            /* 自動換行 */
+  gap: 30px;                  /* 選項之間的距離 */
+  margin-top: 20px;
 }
 
+/* 每個選項按鈕 */
 .optionBtn {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
   padding: 20px;
   border: 2px solid #ccc;
   background: #fff;
   cursor: pointer;
-  width: 150px;
+  width: 180px;               /* 加大一點比較不擠 */
+  border-radius: 10px;        /* 更好看 */
 }
 
+/* 選項圖片 */
 .optionImg {
   width: 150px;
   height: 150px;
   object-fit: contain;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
+/* 正確／錯誤的顏色 */
 .correct {
   border-color: #4CAF50;
   background-color: #d4f8d4;
