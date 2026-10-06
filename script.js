@@ -1,7 +1,7 @@
 let questions = [];
 
 async function loadExcel() {
-  const file = await fetch("questions.xlsx");
+  const file = await fetch("Q.xlsx");   // 你的檔名是 Q.xlsx
   const data = await file.arrayBuffer();
   const workbook = XLSX.read(data);
   const sheet = workbook.Sheets[workbook.SheetNames[0]];
@@ -12,7 +12,7 @@ async function loadExcel() {
 function newQuestion() {
   const q = questions[Math.floor(Math.random() * questions.length)];
 
-  // 題目欄位叫 char，不是 question
+  // 題目欄位叫 char
   document.getElementById("questionBox").innerText = q.char;
 
   const optionsBox = document.getElementById("optionsBox");
