@@ -37,7 +37,7 @@ function newQuestion() {
     }
 
     btn.onclick = () => {
-      if (letter === q.answer) {
+      if (letter === q.Ans) {
         btn.classList.add("correct");
       } else {
         btn.classList.add("wrong");
