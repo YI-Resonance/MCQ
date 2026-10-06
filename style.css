@@ -1,7 +1,9 @@
 #questionBox {
-  font-size: 88px;
-  margin-bottom: 20px;
-  align: center;
+  display: flex;
+  justify-content: center;   /* 水平置中 */
+  align-items: center;        /* 垂直置中 */
+  height: 80px;               /* 自行調整高度 */
+  font-size: 28px;
 }
 
 .optionBtn {
