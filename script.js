@@ -12,30 +12,36 @@ async function loadExcel() {
 function newQuestion() {
   const q = questions[Math.floor(Math.random() * questions.length)];
 
-  document.getElementById("questionBox").innerText = q.question;
+  // 題目欄位叫 char，不是 question
+  document.getElementById("questionBox").innerText = q.char;
 
   const optionsBox = document.getElementById("optionsBox");
   optionsBox.innerHTML = "";
 
-  ["A","B","C","D"].forEach(letter => {
+  // Excel 有 A、B、C、D、E 五個選項
+  ["A","B","C","D","E"].forEach(letter => {
     const btn = document.createElement("button");
     btn.classList.add("optionBtn");
 
-    // 建立圖片
-    if (q[letter + "_img"]) {
+    const imgField = letter + "_img";
+    const textField = letter + "_text";
+
+    // 圖片
+    if (q[imgField]) {
       const img = document.createElement("img");
-      img.src = q[letter + "_img"];
+      img.src = q[imgField];
       img.classList.add("optionImg");
       btn.appendChild(img);
     }
 
-    // 建立文字（如果有）
-    if (q[letter + "_text"]) {
+    // 文字
+    if (q[textField]) {
       const text = document.createElement("div");
-      text.innerText = q[letter + "_text"];
+      text.innerText = q[textField];
       btn.appendChild(text);
     }
 
+    // 答案判斷（Excel 的答案欄位叫 Ans）
     btn.onclick = () => {
       if (letter === q.Ans) {
         btn.classList.add("correct");
